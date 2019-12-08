@@ -1,0 +1,34 @@
+<div fxLayout="row wrap">
+  <div fxFlex="50" fxFlex.xs="100%">
+    <div fxLayout="row wrap">
+      <mat-card fxFlex="100" fxFlex.xs="100%">
+        <mat-card-title>Add Purchase</mat-card-title>
+        <mat-card-content>
+          <app-add-ph></app-add-ph>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div fxLayout="row wrap">
+      <div fxFlex="100">
+        <section fxLayout="row wrap" fxLayoutAlign="wrap">
+          <mat-card fxFlex="100" fxFlex.xs="100%">
+            <mat-card-title>Graph</mat-card-title>
+            <mat-card-content>
+              <app-ph-category-chart></app-ph-category-chart>
+            </mat-card-content>
+          </mat-card>
+        </section>
+      </div>
+    </div>
+  </div>
+  <div fxFlex="50">
+    <section fxLayout="row wrap" fxLayoutAlign="wrap">
+      <mat-card fxFlex="100" fxFlex.xs="100%">
+        <mat-card-title>Table</mat-card-title>
+        <mat-card-content>
+          <app-ph-list></app-ph-list>
+        </mat-card-content>
+      </mat-card>
+    </section>
+  </div>
+</div>

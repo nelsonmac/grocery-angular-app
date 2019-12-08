@@ -1,0 +1,66 @@
+<div class="panel-body">
+    <div class="row">
+      <div class="container col-lg-12">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+          <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+  
+          <!-- Position Column -->
+  
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+          </ng-container>
+  
+          <!-- Name Column -->
+          <ng-container matColumnDef="category">
+            <th mat-header-cell *matHeaderCellDef> Category </th>
+            <td mat-cell *matCellDef="let row"> {{row.category.name}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="uom">
+            <th mat-header-cell *matHeaderCellDef> UOM </th>
+            <td mat-cell *matCellDef="let row"> {{row.uom.name}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="currency">
+            <th mat-header-cell *matHeaderCellDef> Currency </th>
+            <td mat-cell *matCellDef="let row"> {{row.currency.name}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="defaultQty">
+            <th mat-header-cell *matHeaderCellDef> Default Qty </th>
+            <td mat-cell *matCellDef="let row"> {{row.defaultQty}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="pricePerUnit">
+            <th mat-header-cell *matHeaderCellDef> Price Per Unit </th>
+            <td mat-cell *matCellDef="let row"> {{row.pricePerUnit}} </td>
+          </ng-container>
+
+          <!-- actions -->
+          <ng-container matColumnDef="action">
+            <mat-header-cell *matHeaderCellDef>
+              <button mat-icon-button color="primary" (click)="openAddDialog()">
+                <mat-icon aria-label="Example icon-button with a heart icon">add</mat-icon>
+              </button>
+            </mat-header-cell>
+  
+            <mat-cell *matCellDef="let row">
+              <button mat-icon-button color="accent" (click)="openEditDialog(row)">
+                <mat-icon aria-label="Edit">edit</mat-icon>
+              </button>
+  
+              <button mat-icon-button color="accent" (click)="openDeleteDialog(row)">
+                <mat-icon aria-label="Delete">delete</mat-icon>
+              </button>
+            </mat-cell>
+          </ng-container>
+  
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,23 @@
+<form #myform="ngForm" (ngSubmit)="registerPurchase(purchase)" class="form form-register">
+    <div class="example-container">
+
+        <mat-form-field>
+            <mat-select name="item" placeholder="Item" [(ngModel)]="purchase.item.id">
+                <mat-option *ngFor="let item of items" [value]="item.id" (onSelectionChange)="onSelectItem(item)">
+                    {{item.name}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput name="price" placeholder="Price" [value]="selectedItem.pricePerUnit"
+                [(ngModel)]="purchase.item.pricePerUnit">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput name="qty" placeholder="Qty" [value]="0" [(ngModel)]="purchase.qty">
+        </mat-form-field>
+        <div>
+            <div fxFlex></div>
+            <button type="submit" mat-raised-button>Submit</button>
+        </div>
+
+    </div>
+</form>

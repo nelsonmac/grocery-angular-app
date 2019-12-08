@@ -1,0 +1,46 @@
+<h1 mat-dialog-title>Add</h1>
+<div mat-dialog-content>
+    <mat-label>Item Name</mat-label>
+    <mat-form-field>
+        <input matInput [(ngModel)]="data.item.name">
+    </mat-form-field>
+    <mat-label>Category</mat-label>
+    <mat-form-field>
+        <select matNativeControl [(ngModel)]="data.item.category.id" name="car">
+            <option value="" selected></option>
+            <option *ngFor="let category of data.categories" [value]="category.id">
+                {{category.name}}
+            </option>
+        </select>
+    </mat-form-field>
+    <mat-label>UOM</mat-label>
+    <mat-form-field>
+        <select matNativeControl [(ngModel)]="data.item.uom.id" name="car">
+            <option value="" selected></option>
+            <option *ngFor="let uom of data.uoms" [value]="uom.id">
+                {{uom.name}}
+            </option>
+        </select>
+    </mat-form-field>
+    <mat-label>Currency</mat-label>
+    <mat-form-field>
+        <select matNativeControl [(ngModel)]="data.item.currency.id" name="car">
+            <option value="" selected></option>
+            <option *ngFor="let currency of data.currencies" [value]="currency.id">
+                {{currency.name}}
+            </option>
+        </select>
+    </mat-form-field>
+    <mat-label>Default Qty</mat-label>
+    <mat-form-field>
+        <input matInput [(ngModel)]="data.item.defaultQty">
+    </mat-form-field>
+    <mat-label>Price Per Unit</mat-label>
+    <mat-form-field>
+        <input matInput [(ngModel)]="data.item.pricePerUnit">
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">No Thanks</button>
+    <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+</div>

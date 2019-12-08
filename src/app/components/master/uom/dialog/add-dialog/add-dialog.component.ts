@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { Uom } from 'src/app/uom';
+import { Uom } from 'src/app/models/uom';
 
 
 @Component({
