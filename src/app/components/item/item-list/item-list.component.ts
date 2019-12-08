@@ -69,7 +69,7 @@ export class ItemListComponent implements OnInit {
       this.changeDetectorRefs.detectChanges();
     });
   }
-  deleteCurrency(id: string) {
+  deleteItem(id: string) {
     this.itemService.deleteItem(id).subscribe();
     this.reloadData();
   }
